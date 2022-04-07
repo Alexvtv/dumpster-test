@@ -1,0 +1,24 @@
+.item {
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10px 20px;
+
+  &__file {
+    height: 110px;
+  }
+
+  &__directory {
+    height: 100px;
+  }
+
+  &__name {
+    width: 130px;
+    word-wrap: break-word;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 20px;
+  }
+}
