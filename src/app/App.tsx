@@ -26,7 +26,7 @@ export const App = () => {
 
         timeout = setTimeout(() => {
             if (data) setDirectories(getDirectories(replacing(value)));
-        }, 1000);
+        }, 500);
     };
 
     const clickHandler = useCallback((item:DirectoryT) => {

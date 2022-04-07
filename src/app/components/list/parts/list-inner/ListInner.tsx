@@ -10,13 +10,18 @@ type ListInnerT = {
 };
 
 export const ListInner = ({directory, clickHandler}:ListInnerT) => {
-    if (directory.contents?.length) {
+    const {contents, type} = directory;
+
+    if (contents?.length) {
+        const sortedContents = [...contents].sort((a, b) =>
+            (a.type > b.type) ? 1 : ((b.type > a.type) ? -1 : 0));
+
         return <>
-            {directory.contents.map((item, index) =>
+            {sortedContents.map((item, index) =>
                 <Shortcut item={item} handler={clickHandler} key={index}/>)}
         </>;
     }
-    if (directory.type === 'file') {
+    if (type === 'file') {
         return <Shortcut item={directory} handler={clickHandler}/>;
     }
     return <div> Папка пуста</div>;
